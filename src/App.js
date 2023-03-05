@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+// import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Postdetail from './Postdetail';
 import './App.css';
-
+import CreatePost from './CreatePost';
+import Home from './Home';
+import Navbar from './Navbar';
+// import 
+// import { initializeApp } from 'firebase/app';
+// import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />}/>
+        <Route path='/create-post' element={< CreatePost/>}/>
+        <Route path='/postdetail' element={< Postdetail/>}/>
+      </Routes>
+    </Router>
     </div>
-  );
+     ) 
 }
 
 export default App;
